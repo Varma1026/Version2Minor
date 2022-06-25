@@ -67,7 +67,7 @@ function ajaxForgotPasswordPageCall() {
       success: function (response) {
         $('.login-response').html(response);
         if(response==="Logged"){
-          window.location.href="http://localhost/SLMS_V2.0/studentLogin/dashboard.php";
+          window.location.href="http://localhost/SLMS_V2.0/Version2Minor/studentLogin/dashboard.php";
         }
        
       },
@@ -90,7 +90,7 @@ function ajaxForgotPasswordPageCall() {
       success: function (response) {
         $('.login-response').html(response);
         if(response==="Logged"){
-          window.location.href="http://localhost/SLMS_V2.0/adminLogin/dashboard.php";
+          window.location.href="http://localhost/SLMS_V2.0/Version2Minor/adminLogin/dashboard.php";
         }
        
       },
