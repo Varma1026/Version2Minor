@@ -10,18 +10,26 @@ if (isset($_SESSION['sess_user']))
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-3 mb-4">
-            <div class="card-body profile bg-light rounded shadow ">
-             
-                <img src="./../dashassets/pic/<?php if($array['gender']=='Male'){?>male.png<?php }else{ ?>female.png <?php }?>" height="100px" width="100px" class="rounded-circle mx-auto" alt="">
-                <h5 class="text-center mt-3"><?php echo htmlentities($array['fname']) ?></h5>
-                  <p class="text-center"><?php echo htmlentities($array['rollnum']) ?></p>
-         
-            </div>
-        </div>
-        <div class="col-md-9">
-           <div class="card p-4 bg-light shadow">
-            <h5 class="detailshead">Personal Details</h5>
+        <div class="col-md-12">
+            <div class="card rounded p-3 shadow">
+                <h1 class="fw-bold text-center">PROFILE</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card border p-2 shadow-lg rounded">
+                            <div class="row">
+                                <div class="col-md-3">
+                                <img src="./../dashassets/pic/<?php if($array['gender']=='Male'){?>male.png<?php }else{ ?>female.png <?php }?>" height="250px" width="100%" class="rounded mx-auto" alt="">
+                                </div>
+                                <div class="col-md-9 d-flex align-items-end">
+                                    <div>
+                                    <h2 class="display-5 text-uppercase"><?php echo htmlentities($array['fname']) ?></h2>
+                                    <h2 class="text-uppercase"><?php echo htmlentities($array['rollnum']) ?></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card p-2 shadow-lg rounded">
+                        <h5 class="detailshead">Personal Details</h5>
             <div class="row mt-3">
                 <div class="col-md-6">
                     <div class="form-floating mb-4">
@@ -85,8 +93,11 @@ if (isset($_SESSION['sess_user']))
 
             </div>
 
-
-           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
 </div>
