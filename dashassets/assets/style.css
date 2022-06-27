@@ -266,3 +266,6 @@
 		color: var(--white-color);
 		border: 3px solid var(--first-color);
 	}
+	.color{
+		color: #0ba4bc !important;
+	}
