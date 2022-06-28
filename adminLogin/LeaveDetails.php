@@ -68,7 +68,7 @@ if(isset($_POST['slno'])){
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Take Action</button>
+                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-whatever="@mdo">Take Action</button>
                                         </td>
                                     </tr>
                                 </thead>

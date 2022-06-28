@@ -25,8 +25,9 @@ $array4=mysqli_fetch_array($details4);
             <h3 class="text-start">Overview of Student Leaves</h3>
             <div class="row justify-content-around">
                 <div class="col-md-3 mb-3">
+                <a type="button" onclick="PendingLeaves()" >
                     <div class="row pt-3 align-items-center rounded border shadow">
-                        <a type="button" onclick="PendingLeaves()" >
+                        
                         <div class="col-2">
                             <i class="icon1 fal fa-hourglass-half fa-2x"></i>
                         </div>
@@ -34,12 +35,14 @@ $array4=mysqli_fetch_array($details4);
                             <h5 class="text-end">Leaves Pending</h5>
                             <h3 class="text-end"><p><?php echo htmlentities($array['coun']) ?></p></h3>
                         </div>
-                        </a>
+                        
                     </div>
+                </a>
                 </div>
                 <div class="col-md-3 mb-3">
+                    <a type="button" onclick="AcceptedLeaves()" >
                     <div class="row pt-3 align-items-center rounded border shadow">
-                        <a type="button" onclick="AcceptedLeaves()" >
+                        
                         <div class="col-2">
                             <i class="icon2 far fa-2x fa-check"></i>
                         </div>
@@ -47,12 +50,14 @@ $array4=mysqli_fetch_array($details4);
                             <h5 class="text-end">Leaves Accepted</h5>
                             <h3 class="text-end"><p><?php echo htmlentities($array3['coun']) ?></p></h3>
                         </div>
-                        </a>
+                       
                     </div>
+                    </a>
                 </div>
                 <div class="col-md-3 mb-3">
+                <a type="button" onclick="RejectedLeaves()" >
                     <div class="row pt-3 align-items-center rounded border shadow">
-                        <a type="button" onclick="RejectedLeaves()" >
+                        
                         <div class="col-2">
                             <i class="icon3 fas fa-times fa-2x"></i>
                         </div>
@@ -60,8 +65,9 @@ $array4=mysqli_fetch_array($details4);
                             <h5 class="text-end">Leaves Rejected</h5>
                             <h3 class="text-end"><p><?php echo htmlentities($array4['coun']) ?></p></h3>
                         </div>
-                        </a>
+                        
                     </div>
+                </a>
                 </div>
             </div>
         </div>
