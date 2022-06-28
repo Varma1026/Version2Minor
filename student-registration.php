@@ -3,8 +3,9 @@
 				<div class="col-md-10">
 					<div class="card p-4 mb-5 shadow">
 						<h2 class="text-center py-4">STUDENT REGISTRATION</h2>
-						<div class="row">
+						
 						<form id="studentRegisterForm">
+						<div class="row">
 							<div class="col-md-6">
 								<div class="form-floating mb-4">
 									<input type="text" class="form-control shadow-none" id="fullName" name="fullName" placeholder="name@example.com">
@@ -111,8 +112,9 @@
 							</div>
 							<div class=" col-md-6 registerStudent-response text-danger fw-bold"></div>
 							<button class="btn col-12 mx-auto py-3 LOGIN" onclick="registerStudent()" type="button">Register</button>
-						</form>
+						
 						</div>
+						</form>
 					</div>
 				</div>
 			</div>
