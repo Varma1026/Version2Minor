@@ -118,3 +118,23 @@ if(isset($_POST['RejectedList'])){
 ?>
    
 <?php }
+
+//// password change
+if (isset($_POST['ChangePassword'])){
+   $oldPassword= md5($conn -> real_escape_string($_POST['oldPassword']));
+   // $newPassword = $conn -> real_escape_string($_POST['newPassword']);
+   $confirmPassword = $conn -> real_escape_string($_POST['confirmPassword']);
+   $Password=md5($confirmPassword);
+   $active_user = $_SESSION['sess_user'];
+   $sql="SELECT * FROM `tbl_student` WHERE `email` = '$active_user ' ";
+   $query=mysqli_query($conn,$sql);
+   $row=mysqli_fetch_array($query);
+   if($row['password']==$oldPassword){
+       $sql = " UPDATE  `tbl_student` SET  `password` = '$Password' WHERE `email`= '$active_user' ";
+       $query=mysqli_query($conn,$sql);
+       echo '<p class="text-primary"><i class="fas fa-pencil-alt"></i> Updated Successfully</p>';
+   }else{
+     echo '<p class="text-primary"><i class="fas fa-exclamation-triangle"></i> Old Password Incorrect</p>';
+   }
+   
+}

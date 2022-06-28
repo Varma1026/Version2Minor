@@ -68,7 +68,12 @@ if(isset($_POST['slno'])){
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-whatever="@mdo">Take Action</button>
+                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop" <?php if($row['status'] == 'Accepted' || $row['status'] == 'Rejected'){ ?> disabled <?php } ?> data-whatever="@mdo"><?php if($row['status'] == 'Accepted' || $row['status'] == 'Rejected' ){?>
+                                          Action Taken 
+                                          <?php }else{ ?>
+                                            Take Action 
+                                            <?php } ?>
+                                        </button>
                                         </td>
                                     </tr>
                                 </thead>
@@ -79,6 +84,46 @@ if(isset($_POST['slno'])){
             </div>
         </div>
 
+<!-- Modal began -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      
+      <div class="modal-body">
+      <form id="leaveresponse">
+        <div class="row">
+            <div class="form-floating mb-4">
+            <select class="form-select" id="floatingSelect" id="leavestatus" name="leavestatus" aria-label="Floating label select example">
+                <option value="" selected >Open this select menu</option>
+                <option value="Accepted" >Accept</option>
+                <option value="Rejected" >Reject</option> 
+            </select>
+            <label for="floatingSelect">Action</label>
+            </div>
+            <div class="form-floating mb-4">
+                  <input type="text" class="form-control shadow-none" id="leaveremark" name="leaveremark" placeholder="name@example.com">
+									<label for="floatingInput">Remarks</label>
+            </div>
+            <input type="text" name="leaveslno" id="leaveslno" hidden value="<?php echo htmlentities($row['slno']) ?>">
+            
+        </div>
+      </form>
+      <div id="leaverespond" class="text-danger leaverespond "></div>
+      </div>
+      <div class="modal-footer">
+        <br><br><br>
+        
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="RespondLeave()" class="btn btn-primary">Take Action</button>
+      </div>
+    </div>
+  </div>
+</div> 
 
 
         

@@ -86,6 +86,42 @@ if(isset($_POST['RejectedList'])){
    }else{
       echo "No data found";
    }
-?>
+}
+
+if(isset($_POST['respondleave'])){
+   if(isset($_POST['leavestatus']) && $_POST['leavestatus'] != '' && isset($_POST['leaveslno']) && $_POST['leaveslno'] != ''  && isset($_POST['leaveremark']) && $_POST['leaveremark'] != ''){
+      $leavestatus = $conn -> real_escape_string($_POST['leavestatus']);
+      $leaveremark = $conn -> real_escape_string($_POST['leaveremark']);
+      $leaveslno = $conn -> real_escape_string($_POST['leaveslno']);
+      $update=mysqli_query($conn,"UPDATE `tbl_leave` SET	`adminremark`='$leaveremark',`adminremarkdate`='".date("d-m-Y H:i:s")."',`status`='$leavestatus' WHERE `slno` = '$leaveslno'");
+      
+      if($update){
+         echo "Updated";
+      }else{
+         echo "Failed";
+      }
+     
+   }else{
+      echo "All details Must be filled";
+   }
+}
+
+//// password change
+if (isset($_POST['ChangePassword'])){
+   $oldPassword= md5($conn -> real_escape_string($_POST['oldPassword']));
+   // $newPassword = $conn -> real_escape_string($_POST['newPassword']);
+   $confirmPassword = $conn -> real_escape_string($_POST['confirmPassword']);
+   $Password=md5($confirmPassword);
+   $active_user = $_SESSION['sess_user'];
+   $sql="SELECT * FROM `admin` where `username`= '$active_user' ";
+   $query=mysqli_query($conn,$sql);
+   $row=mysqli_fetch_array($query);
+   if($row['password']==$oldPassword){
+       $sql = " UPDATE  `admin` SET  `password` = '$Password' WHERE `username`= '$active_user' ";
+       $query=mysqli_query($conn,$sql);
+       echo '<p class="text-primary"><i class="fas fa-pencil-alt"></i> Updated Successfully</p>';
+   }else{
+     echo '<p class="text-primary"><i class="fas fa-exclamation-triangle"></i> Old Password Incorrect</p>';
+   }
    
-<?php }
+}

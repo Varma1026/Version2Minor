@@ -104,3 +104,36 @@ function ajaxChangepasswordPageCall() {
       },
     });
   }
+
+///update password
+function ChangePassword() {
+  $('.Change-Password-Alerts').html('Loading...');
+  var formData = {
+    oldPassword: $('#oldpassword').val(),
+    newPassword: $('#newpassword').val(),
+    confirmPassword: $('#confirmpassword').val(),
+    ChangePassword: 'ChangePassword',
+  };
+  if (formData.oldPassword == '' || formData.newPassword == '' || formData.confirmPassword == '' || formData.ChangePassword == '') {
+    // $('.alert-bell').removeClass('d-none');
+    $('.Change-Password-Alerts').html('All fields must be filled!');
+  } 
+  else{
+
+      if(formData.newPassword == formData.confirmPassword) {
+        $.ajax({
+          type: 'POST',
+          url: './backScript.php',
+          data: formData,
+          success: function (response) {
+            // $('.alert-bell').removeClass('d-none');
+            $('.Change-Password-Alerts').html(response);
+            $('.Change-Password-btn').hide();
+          },
+        });
+      }
+    else {
+        $('.Change-Password-Alerts').html('Password and confirm password should be same!!');
+    }
+  }
+}
