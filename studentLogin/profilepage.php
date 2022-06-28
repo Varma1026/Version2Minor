@@ -21,8 +21,8 @@ if (isset($_SESSION['sess_user']))
                                 <img src="./../dashassets/pic/<?php if($array['gender']=='Male'){?>male.png<?php }else{ ?>female.png <?php }?>" height="250px" width="100%" class="rounded mx-auto" alt="">
                                 </div>
                                 <div class="col-md-9 d-flex align-items-end">
-                                    <div>
-                                    <h2 class="display-6 text-uppercase"><?php echo htmlentities($array['fname']) ?></h2>
+                                    <div class="align-items-center">
+                                    <h2 class="display-6 text-uppercase "><?php echo htmlentities($array['fname']) ?></h2>
                                     <h2 class="text-uppercase"><?php echo htmlentities($array['rollnum']) ?></h2>
                                     </div>
                                 </div>

@@ -27,6 +27,18 @@ function ajaxLeaveHistoryPageCall() {
       },
     });
   }
+   //Leave details page
+function LeaveDetailsPagecall(slno) {
+  alert(slno);
+  $.ajax({
+    type : 'POST',
+    url: './LeaveDetails.php',
+    data:{slno:slno},
+    success: function (response) {
+      $('.ajax-main-content').html(response);
+    },
+  });
+}
   //Change Password
 function ajaxChangepasswordPageCall() {
     $.ajax({
@@ -52,6 +64,43 @@ function ajaxChangepasswordPageCall() {
     processData: false,
     success: function (response) {
       $('.registerStudentleave-response').html(response);
+      document.getElementById("studentLeaveRegisterForm").reset();
     },
   });
 }
+
+  //Pending Leave Hisstory
+  function PendingLeaves(){
+    $.ajax({
+      type:'POST',
+      url: './backScript.php',
+      data:{PendingList:'PendingList'},
+      success: function (response) {
+        $('.LeaveList').html(response);
+      },
+    });
+  }
+
+  //Accpeted Leave Hisstory
+  function AcceptedLeaves(){
+    $.ajax({
+      type:'POST',
+      url: './backScript.php',
+      data:{AcceptedList:'AcceptedList'},
+      success: function (response) {
+        $('.LeaveList').html(response);
+      },
+    });
+  }
+
+  //Rejected Leave Hisstory
+  function RejectedLeaves(){
+    $.ajax({
+      type:'POST',
+      url: './backScript.php',
+      data:{RejectedList:'RejectedList'},
+      success: function (response) {
+        $('.LeaveList').html(response);
+      },
+    });
+  }

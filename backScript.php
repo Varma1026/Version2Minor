@@ -55,11 +55,10 @@ if(isset($_POST['registerStudent'])){
 if(isset($_POST['StudentLogin'])){
 	if (!isset($_POST['userRollNumber']) || $_POST['userRollNumber'] == "" || !isset($_POST['userPassword']) || $_POST['userPassword'] == "") {
 		echo "All fields must be filled!";
-	}else {
-
+	}else{
 		$UserName = $conn -> real_escape_string($_POST['userRollNumber']);
 		$Password = md5($conn -> real_escape_string($_POST['userPassword']));
-        
+
 		// Login Type Check
         $Login = mysqli_query($conn,"SELECT * FROM `tbl_student` WHERE `rollnum`='$UserName'");
         if (mysqli_num_rows($Login) == 1) {
@@ -74,5 +73,32 @@ if(isset($_POST['StudentLogin'])){
         }else{
             echo "Wrong Credentials";
         }
+
+    }
+}
+
+///Admin Login
+if(isset($_POST['AdminLogin'])){
+	if (!isset($_POST['adminuserName']) || $_POST['adminuserName'] == "" || !isset($_POST['adminuserPassword']) || $_POST['adminuserPassword'] == "") {
+		echo "All fields must be filled!";
+	}else{
+		$UserName = $conn -> real_escape_string($_POST['adminuserName']);
+		$Password = md5($conn -> real_escape_string($_POST['adminuserPassword']));
+
+		// Login Type Check
+        $Login = mysqli_query($conn,"SELECT * FROM `admin` WHERE `username`='$UserName'");
+        if (mysqli_num_rows($Login) == 1) {
+            $LoginRow = mysqli_fetch_array($Login);
+            // If the password inputs matched the hashed password in the database
+            if($Password==$LoginRow['password']) {
+                $_SESSION['sess_user'] = $LoginRow['username'];
+                echo  "Logged";
+            }else{
+                echo "Wrong Credentials";
+            } 
+        }else{
+            echo "Wrong Credentials";
+        }
+
     }
 }

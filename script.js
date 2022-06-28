@@ -3,7 +3,7 @@ function ajaxLoginPageCall() {
     $.ajax({
       url: './login.php',
       success: function (response) {
-        $('.main-content-index').addClass('login-student').removeClass('register-student');
+        $('.main-content-index').removeClass('register-student');
         $('.main-content-index').html(response);
       },
     });
@@ -67,7 +67,7 @@ function ajaxForgotPasswordPageCall() {
       success: function (response) {
         $('.login-response').html(response);
         if(response==="Logged"){
-          window.location.href="http://localhost/SLMS_V2.0/Version2Minor/studentLogin/dashboard.php";
+          window.location.href="http://localhost/Version2Minor/studentLogin/dashboard.php";
         }
        
       },
@@ -90,7 +90,7 @@ function ajaxForgotPasswordPageCall() {
       success: function (response) {
         $('.login-response').html(response);
         if(response==="Logged"){
-          window.location.href="http://localhost/SLMS_V2.0/Version2Minor/adminLogin/dashboard.php";
+          window.location.href="http://localhost/Version2Minor/adminLogin/dashboard.php";
         }
        
       },

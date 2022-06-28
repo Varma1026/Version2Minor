@@ -24,6 +24,7 @@ body::-webkit-scrollbar{
 .brand{
     font-size: 1.2rem;
 }
+
 .login-student{
     height: 100vh;
     justify-content: center;
@@ -40,3 +41,4 @@ body::-webkit-scrollbar{
     background-size: cover;
     background-position: center;
 }
+

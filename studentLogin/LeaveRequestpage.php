@@ -18,35 +18,35 @@ if (isset($_SESSION['sess_user']))
                     <div class="col-11 mx-auto">
                     
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control shadow-none" id="leavefullname" value="<?php echo htmlentities($array['fname']) ?>" readonly >
+                            <input type="text" class="form-control shadow-none" name="leavefullname" id="leavefullname" value="<?php echo htmlentities($array['fname']) ?>" readonly >
                             <label for="floatingInput">Full Name<span class="text-danger star">*</span></label>
                         </div>
 
                     </div>
                     <div class="col-11 mx-auto">
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control shadow-none" value="<?php echo htmlentities($array['rollnum']) ?>" readonly id="leaverollnum" >
+                            <input type="text" class="form-control shadow-none" value="<?php echo htmlentities($array['rollnum']) ?>" readonly name="leaverollnum" id="leaverollnum" >
                             <label for="floatingInput">Roll Number<span class="text-danger star">*</span></label>
                           </div>
 
                     </div>
                     <div class="col-11 mx-auto">
                         <div class="form-floating mb-4">
-                            <input type="date" class="form-control shadow-none" id="leavedatel" >
+                            <input type="date" class="form-control shadow-none" name="leavedatel" id="leavedatel" >
                             <label for="floatingInput">Leaving Date<span class="text-danger star">*</span></label>
                           </div>
 
                     </div>
                     <div class="col-11 mx-auto">
                         <div class="form-floating mb-4">
-                            <input type="date" class="form-control shadow-none" id="leavedater" >
+                            <input type="date" class="form-control shadow-none" name="leavedater" id="leavedater" >
                             <label for="floatingInput">Arriving Date<span class="text-danger star">*</span></label>
                           </div>
 
                     </div>
                     <div class="col-11 mx-auto">
                         <div class="form-floating mb-4">
-                            <select class="form-select" id="leaveType" aria-label="Floating label select example">
+                            <select class="form-select" name="leaveType" id="leaveType" aria-label="Floating label select example">
                               <option value="" selected>Open this select menu</option>
                               <option value="Sick Leave">Sick Leave</option>
                               <option value="Casual Leave">Casual Leave</option>
@@ -56,7 +56,7 @@ if (isset($_SESSION['sess_user']))
                     </div>
                     <div class="col-11 mx-auto">
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control shadow-none" id="leavereason" >
+                            <input type="text" class="form-control shadow-none" name="leavereason" id="leavereason" >
                             <label for="floatingInput">Reason<span class="text-danger star">*</span></label>
                           </div>
 

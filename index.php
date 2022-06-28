@@ -10,6 +10,20 @@
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+<style>
+body {
+  background-image: url('Students.jpg');
+  background-color: #cccccc;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(3px) !important;
+  backdrop-filter: blur(3px);
+}
+</style>
 <body>
   <div class="nav py-3 px-md-5 d-flex justify-content-between align-items-center">
     <div class="logo">
